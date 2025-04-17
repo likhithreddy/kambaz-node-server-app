@@ -6,7 +6,7 @@ let { users } = db;
 export const createUser = (user) => {
   const newUser = { ...user, _id: uuidv4() };
   users = [...users, newUser];
-  return newUser;
+  return model.create(newUser);
 };
 export const findAllUsers = () => model.find();
 export const findUserById = (userId) => model.findById(userId);
