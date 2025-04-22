@@ -26,3 +26,8 @@ export function togglePublish(quizId) {
     return quiz.save();
   });
 }
+
+export const findQuizById = (id) => model.findById(id);
+
+export const updateQuiz = (id, updates) =>
+  model.updateOne({ _id: id }, updates);
